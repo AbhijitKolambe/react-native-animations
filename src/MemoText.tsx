@@ -1,20 +1,20 @@
 import React, { useState } from 'react';
 import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
-import MemoText from './src/MemoText';
 
 
-const App = () => {
+const MemoText = () => {
   const [type,setype]= useState<any>(0)
+
+  const test = (t:string)=>{
+console.log(t)
+  }
+  test('hello')
   return (
-    <SafeAreaView style={{
-      flex: 1,
-      backgroundColor: '#fff',
-      justifyContent: 'center',
-    }}>
+    <SafeAreaView style={styles.container}>
  
       
-  <Text style={{fontSize:20}}>Hello</Text>
-<MemoText></MemoText>
+  <Text style={{color:'red'}}>MemoText</Text>
+
     </SafeAreaView>
   );
 };
@@ -27,5 +27,5 @@ const styles = StyleSheet.create({
   },
 });
 
-export default App;
+export default MemoText;
 

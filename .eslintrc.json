@@ -1,0 +1,67 @@
+// {
+//   "extends": ["airbnb", "airbnb-typescript"],
+//   "parserOptions": {
+//     "project": "./tsconfig.json"
+//   },
+//   "rules": {
+//     "react/jsx-uses-vars":"off"
+//   }
+// }
+
+// {
+//   "extends": [
+//     "airbnb"
+//   //  "airbnb-typescript",
+//   //  "plugin:@typescript-eslint/recommended-type-checked"
+//   ],
+//   "parserOptions": {
+//     "project": "./tsconfig.json"
+//   },
+//   "rules": {
+//     "react/jsx-uses-vars": "off",
+//     "@typescript-eslint/no-unused-vars": "error"
+//   }
+// }
+
+// "parserOptions": {
+//     "project": "./tsconfig.json"
+//   },
+
+
+{
+  "env": {
+      "browser": true,
+      "es2021": true
+    },
+    "extends": ["eslint:recommended", "plugin:react/recommended", "plugin:react-hooks/recommended"],
+    "parserOptions": {
+      "ecmaVersion": 12,
+      "sourceType": "module",
+      "ecmaFeatures": {
+        "jsx": true
+      },
+      "project": "./tsconfig.json"
+    },
+    "plugins": ["react", "react-hooks"],
+    "rules": {
+    // "react/jsx-uses-vars": "off",
+    // "@typescript-eslint/no-explicit-any": "error",
+    // "react/no-inline-styles": "error",
+    // "@typescript-eslint/no-unused-vars": "error",
+    // "no-undef": "off", 
+ 
+    "no-restricted-syntax": [
+      "error",
+      {
+        "selector": "JSXAttribute[name.name='style'] > JSXExpressionContainer > ObjectExpression",
+        "message": "Inline styles are not allowed in React Native. Use StyleSheet instead."
+      },
+          {
+        "selector": "JSXIdentifier[name='MemoText']",
+        "message": "Do not use <MemoText>. Use <CustomText> instead."
+      }
+    ]
+  }
+}
+
+
